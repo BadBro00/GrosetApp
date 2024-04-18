@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Grosseto.MainPage"
+             Title="Meteo">
+    <ScrollView>
+        <VerticalStackLayout>
+            <StackLayout Padding="20">
+                <Image
+                    Source="logo_meteo.png"
+                    HeightRequest="185"
+                    Aspect="AspectFit"/>
+                <CollectionView ItemsSource="{Binding MeteoGiorno}" x:Name="Meteo">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <VerticalStackLayout Padding="10" BackgroundColor="#e0e0e0" Margin="0,0,0,10">
+                                <Label Text="{Binding time, StringFormat='Data: {0:d}'}" FontSize="Medium" />
+                                <Label Text="{Binding temperatureAvg, StringFormat='Temperatura media: {0} °C' }" FontSize="Large" />
+                                <Label Text="{Binding temperatureMax, StringFormat='Temperatura massima: {0} °C'}" FontSize="Small" />
+                                <Label Text="{Binding temperatureMin, StringFormat='Temperatura minima: {0} °C'}" FontSize="Small" />
+                                <Label Text="{Binding sunriseTime, StringFormat='Alba: {0:t}'}" FontSize="Small" />
+                                <Label Text="{Binding sunsetTime, StringFormat='Tramonto: {0:t}'}" FontSize="Small" />
+                            </VerticalStackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

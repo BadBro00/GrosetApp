@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Grosseto.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Grosseto"
+    Title="GrossetApp"
+    BackgroundColor="{StaticResource Primary}">
+    <FlyoutItem Title="Grosseto>">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MeteoGiorno}"></ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="Meteo>">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}"></ShellContent>
+        </Tab>
+    </FlyoutItem>
+    <Shell.FlyoutFooter>
+        <Label Text="Eugenio Militerno did this"
+               TextColor="BlueViolet"></Label>
+    </Shell.FlyoutFooter>
+</Shell>
